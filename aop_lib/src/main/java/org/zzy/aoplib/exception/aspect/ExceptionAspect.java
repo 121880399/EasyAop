@@ -26,10 +26,17 @@ public class ExceptionAspect {
     private static final String ANNOTATION_POINTCUT_METHOD = "execution(@org.zzy.aoplib.exception.annotation"
             + ".AutoTryCatch * *(..))";
 
+    /**
+     * 可以根据是否全局trycatch来打开或关闭
+     */
     @Pointcut(PACKAGE_POINTCUT_METHOD)
-    public void autoTryCatch(){}
+    public void packageAutoTryCatch(){}
 
-    @Around("autoTryCatch()")
+    @Pointcut(ANNOTATION_POINTCUT_METHOD)
+    public void annotationAutoTryCatch(){}
+
+    @Around("packageAutoTryCatch()")
+//    @Around("annotationAutoTryCatch()")
     public Object executeTryCatch(final ProceedingJoinPoint proceedingJoinPoint)throws Throwable{
         Object obj=null;
         try {
