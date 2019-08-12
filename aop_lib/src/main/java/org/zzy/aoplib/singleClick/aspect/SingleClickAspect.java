@@ -25,7 +25,7 @@ public class SingleClickAspect {
     /**
      * 间隔时间
      */
-    private static final long INTERVAL_TIME = 5000L;
+    private static final long INTERVAL_TIME = 500L;
 
     /**
      * 直接是用onClick方法
