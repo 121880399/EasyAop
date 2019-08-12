@@ -21,4 +21,18 @@
         android:onClick="onViewClick"
         android:text="防抖" />
 
+    <Button
+        android:id="@+id/async"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="testAsync"
+        android:text="异步" />
+
+    <Button
+        android:id="@+id/delay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="testDelay"
+        android:text="延迟" />
+
 </LinearLayout>

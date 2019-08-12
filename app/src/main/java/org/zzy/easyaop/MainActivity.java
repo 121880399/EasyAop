@@ -5,6 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
+import org.zzy.aoplib.async.annotation.Async;
+import org.zzy.aoplib.delay.annotation.Delay;
+
+import java.util.concurrent.TimeUnit;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,5 +30,14 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG,"onClick--->");
     }
 
+    @Async
+    public void testAsync(View view){
+        Log.d(TAG,"current thread:"+Thread.currentThread().getName());
+    }
+
+    @Delay(delay = 5000 , timeUnit = TimeUnit.MILLISECONDS)
+    public void testDelay(View view){
+        Log.d(TAG,"execution Task");
+    }
 
 }
