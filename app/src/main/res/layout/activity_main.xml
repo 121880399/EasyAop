@@ -14,4 +14,11 @@
         android:onClick="safe"
         android:text="铺获异常" />
 
+    <Button
+        android:id="@+id/click"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onViewClick"
+        android:text="防抖" />
+
 </LinearLayout>
