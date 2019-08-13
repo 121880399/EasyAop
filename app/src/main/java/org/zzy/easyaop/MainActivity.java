@@ -7,6 +7,7 @@ import android.view.View;
 
 import org.zzy.aoplib.async.annotation.Async;
 import org.zzy.aoplib.delay.annotation.Delay;
+import org.zzy.aoplib.schedule.annotation.Scheduler;
 
 import java.util.concurrent.TimeUnit;
 
@@ -39,5 +40,14 @@ public class MainActivity extends AppCompatActivity {
     public void testDelay(View view){
         Log.d(TAG,"execution Task");
     }
+
+    @Scheduler(initDelay = 0 ,interval = 3000 , count = 5,taskFinishCallback = "taskFinish")
+    public void testSchedule(View view){
+        Log.d(TAG,"Schedule task");
+    }
+
+   public void taskFinish(){
+        Log.d(TAG,"Task was finished.");
+   }
 
 }
