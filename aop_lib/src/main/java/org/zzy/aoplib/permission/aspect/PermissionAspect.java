@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.tbruyelle.rxpermissions2.RxPermissions;
@@ -49,7 +50,7 @@ public class PermissionAspect {
                                      try {
                                          proceedingJoinPoint.proceed();
                                      } catch (Throwable throwable) {
-                                         throwable.printStackTrace();
+                                         Log.e("PermissionAspect",Log.getStackTraceString(throwable));
                                      }
                                  }else{
                                      Toast.makeText((Context)target,"未获取到权限",Toast.LENGTH_LONG).show();

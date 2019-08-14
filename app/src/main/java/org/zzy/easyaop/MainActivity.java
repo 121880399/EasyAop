@@ -1,5 +1,6 @@
 package org.zzy.easyaop;
 
+import android.Manifest;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -7,6 +8,7 @@ import android.view.View;
 
 import org.zzy.aoplib.async.annotation.Async;
 import org.zzy.aoplib.delay.annotation.Delay;
+import org.zzy.aoplib.permission.annotation.PermissionRequest;
 import org.zzy.aoplib.schedule.annotation.Scheduler;
 
 import java.util.concurrent.TimeUnit;
@@ -48,6 +50,11 @@ public class MainActivity extends AppCompatActivity {
 
    public void taskFinish(){
         Log.d(TAG,"Task was finished.");
+   }
+
+   @PermissionRequest(value ={Manifest.permission.CAMERA , Manifest.permission.WRITE_EXTERNAL_STORAGE})
+   public void testPermission(View view){
+        Log.d(TAG,"需要相机权限");
    }
 
 }

@@ -49,11 +49,17 @@
         android:orientation="horizontal"
         >
         <Button
-            android:id="@+id/schedule"
+        android:id="@+id/schedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="testSchedule"
+        android:text="定时任务"/>
+        <Button
+            android:id="@+id/permission"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="testSchedule"
-            android:text="定时任务"/>
+            android:onClick="testPermission"
+            android:text="权限"/>
     </LinearLayout>
 
 
